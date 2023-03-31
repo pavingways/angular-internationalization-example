@@ -5,6 +5,19 @@
   "projects": {
     "angular-internationalization-example": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": {
+            "translation": "src/locale/messages.fr.json",
+            "baseHref": ""
+          },
+          "de": {
+            "translation": "src/locale/messages.de.json",
+            "baseHref": ""
+          }
+        }
+      },
       "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
@@ -38,6 +51,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/angular-internationalization-example",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -55,6 +70,15 @@
             "scripts": []
           },
           "configurations": {
+            "en-US": {
+              "localize": ["en-US"]
+            },
+            "fr": {
+              "localize": ["fr"]
+            },
+            "de": {
+              "localize": ["de"]
+            },
             "production": {
               "budgets": [
                 {
@@ -88,7 +112,13 @@
               "browserTarget": "angular-internationalization-example:build:production"
             },
             "development": {
-              "browserTarget": "angular-internationalization-example:build:development"
+              "browserTarget": "angular-internationalization-example:build:development,en-US"
+            },
+            "fr": {
+              "browserTarget": "angular-internationalization-example:build:development,fr"
+            },
+            "de": {
+              "browserTarget": "angular-internationalization-example:build:development,de"
             }
           },
           "defaultConfiguration": "development"

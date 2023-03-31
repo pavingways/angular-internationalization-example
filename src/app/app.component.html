@@ -1,6 +1,15 @@
 <section>
   <article>
-    <h1>Under Construction!</h1>
-    <p>This page is under construction.</p>
+    <h1 i18n="main header|Welcome Message@@welcome">Under Construction!</h1>
+    <p i18n="@@introtext">This page is under construction.</p>
+    <p i18n>Other Text.</p>
+    <img width="300" i18n-src="@@image" src="https://plus.unsplash.com/premium_photo-1668447247167-a17676b40ae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YW1lcmljYW4lMjBmbGFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+    <div>{{ pictitle }}</div>
+    <div>
+      <span i18n="@@amount">This costs: {{ money | currency:(symbol? symbol:''):'symbol':'4.2-2' }}</span>
+    </div>
+    <div>
+      <span i18n="@@currentdate">Current Date:</span> {{ mydate | date:'shortDate' }}
+    </div>
   </article>
 </section>

@@ -1,27 +1,29 @@
-# AngularInternationalizationExample
+# Angular Internationalization Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This project can be built 3 languages: en, de, fr.
+No runtime lang switch, but you need to reload the app via reload (see config)[https://angular.io/guide/i18n-common-deploy].
+Locale files are extracted in JSON format (simpler than XML).
 
-## Development server
+# Preparation / Understand
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- check `i18n` attributes in [src/app/app.component.html]
+- check file structure in [src/locale/] folder
+- check npm scripts in package.json
+- check angular.json i18n setup (cf. Angular docs)[https://angular.io/guide/i18n-common-merge]
 
-## Code scaffolding
+# Translation Workflow
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. change code and texts / image URLs
+2. `npm run extract-i18n` to re-generate [src/locale/messages.json]
+3. add/update/change same IDs in localized files, for e.g. in FR [src/locale/messages.fr.json]
 
-## Build
+# Serve App
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `npm run serve` to serve default locale (configured in angular.json)
+- `npm run serve-de` to serve DE locale
+- `npm run serve-fr` to serve FR locale
 
-## Running unit tests
+# Build App
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. `npm run build` to generate builds in all language versions
+2. then serve DE version from [dist/angular-internationalization-example/de/], /fr for french

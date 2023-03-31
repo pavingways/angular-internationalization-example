@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {getLocaleCurrencySymbol} from '@angular/common';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-internationalization-example';
+
+  public title = 'angular-internationalization-example';
+  public pictitle = $localize `:@@pictitle:picture title`;
+  public money = Math.random() * 100000;
+  public symbol: string | null;
+  public mydate = new Date();
+
+  constructor(@Inject(LOCALE_ID) localeId: string) {
+    this.symbol = getLocaleCurrencySymbol(localeId);
+  }
+
 }

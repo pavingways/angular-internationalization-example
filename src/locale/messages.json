@@ -1,0 +1,12 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "welcome": "Under Construction!",
+    "introtext": "This page is under construction.",
+    "4612936429462564286": "[EN] Other Text.",
+    "image": "https://plus.unsplash.com/premium_photo-1668447247167-a17676b40ae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YW1lcmljYW4lMjBmbGFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "amount": "This costs: {$INTERPOLATION}",
+    "currentdate": "Current Date:",
+    "pictitle": "picture title"
+  }
+}
